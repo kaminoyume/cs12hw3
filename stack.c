@@ -72,6 +72,19 @@ long isfull_Stack (Stack * this_Stack) {
 
 Stack * new_Stack (unsigned long stacksize) {
     /* YOUR CODE GOES HERE */
+  /*allocate*/
+	void*memory = /*to hold array for malloc*/
+		malloc( (size+STACK_OFFSET)*(sizeof(long) );
+
+	Stack * this_Stack = /*to return to caller*/
+		(Stack *)memory+STACK_OFFSET;
+	
+	/*initialize*/
+	this_Stack{STACK_COUNT_INDEX] = ..... //FIXME;
+	this_Stack{STACK_SIZE_INDEX] = size;
+	this_Stack{STACK_POINTER_INDEX] = 0;
+
+	return this_Stack;
 }
 
 long get_occupancy (Stack * this_Stack) {
