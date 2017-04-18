@@ -64,20 +64,56 @@ void empty_Stack (Stack * this_Stack) {
 
 long isempty_Stack (Stack * this_Stack) {
     /* YOUR CODE GOES HERE */
+	/*debug message*/
+	if (debug = TRUE) 
+		/*catastrophic error, the input Stack doesnt exist*/
+		if (this_Stack > 0 || this_Stack < stack_counter)
+			fprintf(stderr, ISEMPTY_NONEXIST[]);
+	
+	int emptyState = FALSE; /*to return to caller*/
+	if (this_Stack[STACK_POINTER_INDEX] == 0)
+	{
+		emptyState = TRUE;
+	}
+	else /*the stack pointer index is above 0 meaning stack is not empty*/
+		emptyState = FALSE;
+	return emptyState;
 }
 
 long isfull_Stack (Stack * this_Stack) {
     /* YOUR CODE GOES HERE */
+	if (debug = TRUE)
+		/*catastrophic error, the input Stack doesnt exist*/
+		if (this_Stack > 0 || this_Stack < stack_counter)
+			fprintf(stderr, ISFULL_NONEXIST[]);
+	
+	int fullState = FALSE;/*to return to caller*/
+	if (this_Stack[STACK_POINTER_INDEX] == this_Stack[STACK_SIZE_INDEX] )
+		/*//FIXME shud this be >=  ??? */
+	{
+		fullState = TRUE;
+	}
+	else /*the stack pointer index is not equal to the total slots available*/
+		fullState = FALSE;
+	return fullState;
 }
 
 Stack * new_Stack (unsigned long stacksize) {
     /* YOUR CODE GOES HERE */
-  /*allocate*/
+	/*increment the amount of stacks created*/
+	stack_counter++;
+	
+	/*debug message*/
+	if (debug == TRUE )
+		fprintf(stderr, ALLOCATED[], stack_counter);
+	
+  	/*allocate*/
 	void*memory = /*to hold array for malloc*/
 		malloc( (stacksize+STACK_OFFSET)*(sizeof(long) );
 
 	Stack * this_Stack = /*to return to caller*/
 		(Stack *)memory+STACK_OFFSET;
+	
 	
 	/*initialize*/
 	this_Stack{STACK_COUNT_INDEX] = stack_counter; /*FIXME?*/
