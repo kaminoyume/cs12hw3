@@ -116,9 +116,9 @@ Stack * new_Stack (unsigned long stacksize) {
 	
 	
 	/*initialize*/
-	this_Stack{STACK_COUNT_INDEX] = stack_counter; /*FIXME?*/
-	this_Stack{STACK_SIZE_INDEX] = stacksize;
-	this_Stack{STACK_POINTER_INDEX] = 0;
+	this_Stack[STACK_COUNT_INDEX] = stack_counter; /*FIXME?*/
+	this_Stack[STACK_SIZE_INDEX] = stacksize;
+	this_Stack[STACK_POINTER_INDEX] = 0;
 
 	return this_Stack;
 }
