@@ -40,7 +40,15 @@ int main (int argc, char * const * argv) {
                 switch (command) {      /* process commands */
 
                 /* YOUR CODE GOES HERE */
-
+                
+                case 'a':
+                        writeline("Please enter the stack capacity: \n", stdout);
+                        item = decin();
+                        new_Stack(item);
+                        break;
+                
+                
+                
                 case 'f':               /* isfull */
                         if (isfull_Stack (main_Stack))
                                 writeline ("Stack is full.\n",stdout);
