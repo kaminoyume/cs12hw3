@@ -64,13 +64,16 @@ void empty_Stack (Stack * this_Stack) {
 
 long isempty_Stack (Stack * this_Stack) {
     /* YOUR CODE GOES HERE */
+
+	/*to return to caller*/
+	int emptyState = FALSE; 
+
 	/*debug message*/
-	if (debug = TRUE) 
+	if (debug == TRUE) 
 		/*catastrophic error, the input Stack doesnt exist*/
-		if (this_Stack > 0 || this_Stack < stack_counter)
-			fprintf(stderr, ISEMPTY_NONEXIST[]);
+		if (this_Stack[STACK_COUNT_INDEX] > 0 || this_Stack[STACK_COUNT_INDEX] < stack_counter)
+			fprintf(stderr, ISEMPTY_NONEXIST);
 	
-	int emptyState = FALSE; /*to return to caller*/
 	if (this_Stack[STACK_POINTER_INDEX] == 0)
 	{
 		emptyState = TRUE;
@@ -82,12 +85,16 @@ long isempty_Stack (Stack * this_Stack) {
 
 long isfull_Stack (Stack * this_Stack) {
     /* YOUR CODE GOES HERE */
-	if (debug = TRUE)
+
+	/*to return to caller*/
+	int fullState = FALSE;
+
+	if (debug == TRUE)
 		/*catastrophic error, the input Stack doesnt exist*/
-		if (this_Stack > 0 || this_Stack < stack_counter)
-			fprintf(stderr, ISFULL_NONEXIST[]);
+		if (this_Stack[STACK_COUNT_INDEX] > 0 || this_Stack[STACK_COUNT_INDEX] < stack_counter)
+			fprintf(stderr, ISFULL_NONEXIST);
 	
-	int fullState = FALSE;/*to return to caller*/
+	
 	if (this_Stack[STACK_POINTER_INDEX] == this_Stack[STACK_SIZE_INDEX] )
 		/*//FIXME shud this be >=  ??? */
 	{
@@ -105,11 +112,11 @@ Stack * new_Stack (unsigned long stacksize) {
 	
 	/*debug message*/
 	if (debug == TRUE )
-		fprintf(stderr, ALLOCATED[], stack_counter);
+		fprintf(stderr, ALLOCATED, stack_counter);
 	
   	/*allocate*/
 	void*memory = /*to hold array for malloc*/
-		malloc( (stacksize+STACK_OFFSET)*(sizeof(long) );
+		malloc( (stacksize+STACK_OFFSET)*(sizeof(long) )  );
 
 	Stack * this_Stack = /*to return to caller*/
 		(Stack *)memory+STACK_OFFSET;
